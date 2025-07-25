@@ -9,11 +9,13 @@ If you want to use the typography plugin, uncomment the line below.
 /*@plugin '@tailwindcss/typography';*/
 @variant dark (&:is(.dark *));
 
+@custom-variant dark (&:is(.dark *));
+
 @theme inline {
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
   "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
-  --font-mono: var(--font-geist-mono), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+  --font-mono: "Geist Mono", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
   "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
   --color-border: var(--border);
@@ -26,6 +28,8 @@ If you want to use the typography plugin, uncomment the line below.
 
   --color-primary: var(--primary);
   --color-primary-fg: var(--primary-fg);
+  --color-primary-subtle: var(--primary-subtle);
+  --color-primary-subtle-fg: var(--primary-subtle-fg);
 
   --color-secondary: var(--secondary);
   --color-secondary-fg: var(--secondary-fg);
@@ -35,12 +39,21 @@ If you want to use the typography plugin, uncomment the line below.
 
   --color-success: var(--success);
   --color-success-fg: var(--success-fg);
+  --color-success-subtle: var(--success-subtle);
+  --color-success-subtle-fg: var(--success-subtle-fg);
 
   --color-danger: var(--danger);
   --color-danger-fg: var(--danger-fg);
+  --color-danger-subtle: var(--danger-subtle);
+  --color-danger-subtle-fg: var(--danger-subtle-fg);
 
   --color-warning: var(--warning);
   --color-warning-fg: var(--warning-fg);
+  --color-warning-subtle: var(--warning-subtle);
+  --color-warning-subtle-fg: var(--warning-subtle-fg);
+
+  --color-info-subtle: var(--info-subtle);
+  --color-info-subtle-fg: var(--info-subtle-fg);
 
   --color-muted: var(--muted);
   --color-muted-fg: var(--muted-fg);
@@ -86,8 +99,10 @@ If you want to use the typography plugin, uncomment the line below.
   --bg: var(--color-white);
   --fg: var(--color-zinc-950);
 
-  --primary: var(--color-blue-600);
-  --primary-fg: var(--color-white);
+  --primary: var(--color-teal-600);
+  --primary-fg: oklch(1 0 0);
+  --primary-subtle: theme('color-teal-500/15%');
+  --primary-subtle-fg: var(--color-teal-700);
 
   --secondary: var(--color-zinc-100);
   --secondary-fg: var(--color-zinc-950);
@@ -103,17 +118,25 @@ If you want to use the typography plugin, uncomment the line below.
 
   --success: var(--color-emerald-600);
   --success-fg: var(--color-white);
+  --success-subtle: theme('color-emerald-500/15%');
+  --success-subtle-fg: var(--color-emerald-700);
+
+  --info-subtle: theme('color-sky-500/15%');
+  --info-subtle-fg: var(--color-sky-700);
 
   --warning: var(--color-amber-400);
   --warning-fg: var(--color-amber-950);
+  --warning-subtle: theme('color-amber-400/20%');
+  --warning-subtle-fg: var(--color-amber-700);
 
   --danger: var(--color-red-600);
   --danger-fg: var(--color-red-50);
+  --danger-subtle: theme('color-red-500/15%');
+  --danger-subtle-fg: var(--color-red-700);
 
   --border: var(--color-zinc-300);
   --input: var(--color-zinc-300);
-  --ring: var(--color-blue-600);
-
+  --ring: var(--primary);
 
   --navbar: var(--color-zinc-50);
   --navbar-fg: var(--color-zinc-950);
@@ -121,11 +144,11 @@ If you want to use the typography plugin, uncomment the line below.
   --sidebar: var(--color-zinc-50);
   --sidebar-fg: var(--color-zinc-950);
 
-  --chart-1: var(--color-blue-600);
-  --chart-2: var(--color-blue-400);
-  --chart-3: var(--color-blue-300);
-  --chart-4: var(--color-blue-200);
-  --chart-5: var(--color-blue-100);
+  --chart-1: var(--color-teal-600);
+  --chart-2: var(--color-teal-400);
+  --chart-3: var(--color-teal-300);
+  --chart-4: var(--color-teal-200);
+  --chart-5: var(--color-teal-100);
 
   --radius-lg: 0.5rem;
   --radius-xs: calc(var(--radius-lg) * 0.5);
@@ -135,14 +158,22 @@ If you want to use the typography plugin, uncomment the line below.
   --radius-2xl: calc(var(--radius-lg) * 1.5);
   --radius-3xl: calc(var(--radius-lg) * 2);
   --radius-4xl: calc(var(--radius-lg) * 2.5);
+
+
+  ::selection {
+    background-color: #cbfbf1;
+    color: #0e766e;
+  }
 }
 
 .dark {
   --bg: oklch(0.19 0.006 285.885);
   --fg: var(--color-zinc-50);
 
-  --primary: var(--color-blue-600);
-  --primary-fg: var(--color-white);
+  --primary: oklch(0.6 0.118 184.704);
+  --primary-fg: oklch(1 0 0);
+  --primary-subtle: theme('color-teal-500/10%');
+  --primary-subtle-fg: var(--color-teal-300);
 
   --secondary: var(--color-zinc-800);
   --secondary-fg: var(--color-zinc-50);
@@ -158,16 +189,24 @@ If you want to use the typography plugin, uncomment the line below.
 
   --success: var(--color-emerald-600);
   --success-fg: var(--color-white);
+  --success-subtle: theme('color-emerald-500/10%');
+  --success-subtle-fg: var(--color-emerald-400);
+
+  --info-subtle: theme('color-sky-500/10%');
+  --info-subtle-fg: var(--color-sky-300);
 
   --warning: var(--color-amber-400);
   --warning-fg: var(--color-amber-950);
+  --warning-subtle: theme('color-amber-400/10%');
+  --warning-subtle-fg: var(--color-amber-400);
 
   --danger: var(--color-red-600);
   --danger-fg: var(--color-red-50);
+  --danger-subtle: theme('color-red-500/10%');
+  --danger-subtle-fg: var(--color-red-400);
 
   --border: oklch(0.30 0.013 285.805);
   --input: oklch(0.29 0.013 285.805);
-  --ring: var(--color-blue-600);
 
   --navbar: oklch(0.17 0.006 285.885);
   --navbar-fg: var(--color-zinc-50);
@@ -175,11 +214,17 @@ If you want to use the typography plugin, uncomment the line below.
   --sidebar: oklch(0.16 0.006 285.885);
   --sidebar-fg: var(--color-zinc-50);
 
-  --chart-1: var(--color-blue-700);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-400);
-  --chart-4: var(--color-blue-300);
-  --chart-5: var(--color-blue-200);
+  --chart-1: var(--color-teal-700);
+  --chart-2: var(--color-teal-500);
+  --chart-3: var(--color-teal-400);
+  --chart-4: var(--color-teal-300);
+  --chart-5: var(--color-teal-200);
+
+
+  ::selection {
+    background-color: #042f2e;
+    color: #2dd4bf;
+  }
 }
 
 @layer base {
