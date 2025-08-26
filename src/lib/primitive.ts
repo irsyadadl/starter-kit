@@ -3,11 +3,21 @@
 import { composeRenderProps } from "react-aria-components"
 import { type ClassNameValue, twMerge } from "tailwind-merge"
 
-function composeTailwindRenderProps<T>(
-  className: string | ((v: T) => string) | undefined,
-  tailwind: ClassNameValue,
-): string | ((v: T) => string) {
-  return composeRenderProps(className, (className) => twMerge(tailwind, className))
-}
+type Render<T> = string | ((v: T) => string) | undefined
 
-export { composeTailwindRenderProps }
+type CxArgs<T> =
+  | [...ClassNameValue[], Render<T>]
+  | [[...ClassNameValue[], Render<T>]]
+
+export function cx<T = unknown>(...args: CxArgs<T>): string | ((v: T) => string) {
+  if (args.length === 1 && Array.isArray(args[0])) {
+    args = args[0] as [...ClassNameValue[], Render<T>];
+  }
+
+  const className = args.pop() as Render<T>;
+  const tailwinds = args as ClassNameValue[];
+
+  const fixed = twMerge(...tailwinds);
+
+  return composeRenderProps(className, (cn) => twMerge(fixed, cn));
+}
