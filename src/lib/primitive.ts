@@ -5,19 +5,18 @@ import { type ClassNameValue, twMerge } from "tailwind-merge"
 
 type Render<T> = string | ((v: T) => string) | undefined
 
-type CxArgs<T> =
-  | [...ClassNameValue[], Render<T>]
-  | [[...ClassNameValue[], Render<T>]]
+type CxArgs<T> = [...ClassNameValue[], Render<T>] | [[...ClassNameValue[], Render<T>]]
 
 export function cx<T = unknown>(...args: CxArgs<T>): string | ((v: T) => string) {
+  let resolvedArgs = args
   if (args.length === 1 && Array.isArray(args[0])) {
-    args = args[0] as [...ClassNameValue[], Render<T>];
+    resolvedArgs = args[0] as [...ClassNameValue[], Render<T>]
   }
 
-  const className = args.pop() as Render<T>;
-  const tailwinds = args as ClassNameValue[];
+  const className = resolvedArgs.pop() as Render<T>
+  const tailwinds = resolvedArgs as ClassNameValue[]
 
-  const fixed = twMerge(...tailwinds);
+  const fixed = twMerge(...tailwinds)
 
-  return composeRenderProps(className, (cn) => twMerge(fixed, cn));
+  return composeRenderProps(className, (cn) => twMerge(fixed, cn))
 }
