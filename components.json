@@ -18,12 +18,12 @@
     "hooks": "@/hooks"
   },
   "iconLibrary": "@heroicons/react",
-  "registries": {
-    "@irsyadadl": {
-      "url": "https://irsyad.co/r/{name}",
-      "headers": {
-        "Authorization": "Bearer ${REGISTRY_TOKEN}"
-      }
+"registries": {
+"@irsyadadl": {
+    "url": "https://irsyad.co/r/{name}",
+    "headers": {
+    "Authorization": "Bearer ${REGISTRY_TOKEN}"
     }
-  }
+}
+}
 }
