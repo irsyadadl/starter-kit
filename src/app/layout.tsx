@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import "./styles/app.css"
+import "./globals.css"
 import localFont from "next/font/local"
 import { RouterProvider } from "@/components/router-provider"
 import { ThemeProvider } from "@/components/theme-provider"
