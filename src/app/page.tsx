@@ -11,7 +11,7 @@ export default function Home() {
         <div
           className={twJoin(
             "mt-6 gap-x-4 flex items-center justify-center",
-            "*:hover:underline *:text-primary-subtle-fg",
+            "*:hover:underline *:font-medium *:text-primary-subtle-fg",
           )}
         >
           <a
