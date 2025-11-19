@@ -1,20 +1,46 @@
-import { ArrowRightIcon } from "@heroicons/react/16/solid";
+import { twJoin } from "tailwind-merge";
 
 export default function Home() {
   return (
     <div className="flex min-h-screen items-center justify-center">
       <div>
-        <h1 className="text-9xl text-muted-fg tracking-tight">It works!</h1>
+        <h1 className="text-4xl text-center tracking-tight">
+          Intent <span className="text-muted-fg">UI</span> Starter Kit
+        </h1>
 
-        <div className="mt-6 flex items-center justify-center">
+        <div
+          className={twJoin(
+            "mt-6 gap-x-4 flex items-center justify-center",
+            "*:hover:underline *:text-primary-subtle-fg",
+          )}
+        >
           <a
-            className="group rounded-full border bg-overlay px-4 py-2 font-medium text-sm/6 hover:bg-secondary/50"
             target="_blank"
-            href="https://irsyad.co/blocks"
+            href="https://design.intentui.com/blocks"
             rel="noopener"
           >
-            Browse blocks
-            <ArrowRightIcon className="ml-2 inline-block size-4 text-muted-fg transition-transform duration-400 group-hover:translate-x-1 group-hover:text-fg" />
+            Blocks
+          </a>
+          <a
+            target="_blank"
+            href="https://design.intentui.com/patterns"
+            rel="noopener"
+          >
+            Patterns
+          </a>
+          <a
+            target="_blank"
+            href="https://design.intentui.com/products"
+            rel="noopener"
+          >
+            Templates
+          </a>
+          <a
+            target="_blank"
+            href="https://design.intentui.com/docs"
+            rel="noopener"
+          >
+            Docs
           </a>
         </div>
       </div>

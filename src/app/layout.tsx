@@ -6,9 +6,13 @@ import { ThemeProvider } from "@/components/theme-provider";
 
 const fontSans = localFont({
   src: [
-    { path: "./InterVariable.woff2", weight: "100 900", style: "normal" },
     {
-      path: "./InterVariable-Italic.woff2",
+      path: "../fonts/InterVariable.woff2",
+      weight: "100 900",
+      style: "normal",
+    },
+    {
+      path: "../fonts/InterVariable-Italic.woff2",
       weight: "100 900",
       style: "italic",
     },
@@ -17,11 +21,13 @@ const fontSans = localFont({
 });
 
 const fontMono = localFont({
-  src: [{ path: "./geist-mono.woff2", weight: "100 900", style: "normal" }],
+  src: [
+    { path: "../fonts/geist-mono.woff2", weight: "100 900", style: "normal" },
+  ],
   variable: "--font-geist-mono",
 });
 
-const appName = "Starter";
+const appName = "Intent UI Starter Kit";
 
 export const metadata: Metadata = {
   title: {
