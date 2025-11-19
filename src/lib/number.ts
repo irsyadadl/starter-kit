@@ -1,11 +1,11 @@
 type FormatOptions = {
-  locale?: string
-  style?: "decimal" | "currency" | "percent"
-  currency?: string
-  maximumFractionDigits?: number
-  notation?: "standard" | "scientific" | "engineering" | "compact"
-  compactDisplay?: "short" | "long"
-}
+  locale?: string;
+  style?: "decimal" | "currency" | "percent";
+  currency?: string;
+  maximumFractionDigits?: number;
+  notation?: "standard" | "scientific" | "engineering" | "compact";
+  compactDisplay?: "short" | "long";
+};
 
 export function formatNumber(
   value: number,
@@ -24,9 +24,9 @@ export function formatNumber(
     maximumFractionDigits,
     notation,
     compactDisplay,
-  }
+  };
 
-  return new Intl.NumberFormat(locale, options).format(value)
+  return new Intl.NumberFormat(locale, options).format(value);
 }
 
 export function formatKilo(value: number, locale = "en-US"): string {
@@ -34,5 +34,5 @@ export function formatKilo(value: number, locale = "en-US"): string {
     locale,
     notation: "compact",
     compactDisplay: "short",
-  })
+  });
 }

@@ -1,6 +1,10 @@
-"use client"
+"use client";
 
-import { ThemeProvider as Primitive, type ThemeProviderProps, useTheme } from "next-themes"
+import {
+  ThemeProvider as Primitive,
+  type ThemeProviderProps,
+  useTheme,
+} from "next-themes";
 
 const ThemeProvider = ({ children, ...props }: ThemeProviderProps) => {
   return (
@@ -13,7 +17,7 @@ const ThemeProvider = ({ children, ...props }: ThemeProviderProps) => {
     >
       {children}
     </Primitive>
-  )
-}
+  );
+};
 
-export { ThemeProvider, useTheme }
+export { ThemeProvider, useTheme };

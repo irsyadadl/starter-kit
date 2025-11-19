@@ -1,4 +1,4 @@
-import { ArrowRightIcon } from "@heroicons/react/16/solid"
+import { ArrowRightIcon } from "@heroicons/react/16/solid";
 
 export default function Home() {
   return (
@@ -19,5 +19,5 @@ export default function Home() {
         </div>
       </div>
     </div>
-  )
+  );
 }

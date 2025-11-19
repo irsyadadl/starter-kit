@@ -1,91 +1,40 @@
 {
   "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
   "vcs": {
-    "enabled": false,
+    "enabled": true,
     "clientKind": "git",
-    "useIgnoreFile": false
+    "useIgnoreFile": true
   },
   "files": {
-    "includes": ["src/**/*.tsx", "src/**/*.ts", "!src/scripts"],
-    "ignoreUnknown": false
+    "ignoreUnknown": true,
+    "includes": [
+      "**",
+      "!node_modules",
+      "!.next",
+      "!dist",
+      "!build",
+      "!**/*.css"
+    ]
   },
   "formatter": {
     "enabled": true,
     "indentStyle": "space",
-    "indentWidth": 2,
-    "lineWidth": 100
+    "indentWidth": 2
   },
   "linter": {
     "enabled": true,
     "rules": {
       "recommended": true,
-      "performance": {
-        "noImgElement": "off"
-      },
-      "style": {
-        "noNonNullAssertion": "off",
-        "noParameterAssign": "warn",
-        "useImportType": "warn"
-      },
-      "complexity": {
-        "useOptionalChain": "off",
-        "useArrowFunction": "error",
-        "noForEach": "off"
-      },
-      "a11y": {
-        "noRedundantRoles": "off",
-        "noSvgWithoutTitle": "off",
-        "useValidAnchor": "off",
-        "useSemanticElements": "off"
-      },
-      "correctness": {
-        "useUniqueElementIds": "off",
-        "noUnusedImports": { "level": "error", "fix": "safe" },
-        "useExhaustiveDependencies": "off",
-        "useHookAtTopLevel": "error",
-        "noChildrenProp": "off"
-      },
       "suspicious": {
-        "noDocumentCookie": "off",
-        "noExplicitAny": "off",
-        "noArrayIndexKey": "off"
-      },
-      "security": {
-        "noDangerouslySetInnerHtml": "off",
-        "noDangerouslySetInnerHtmlWithChildren": "off"
-      },
-      "nursery": {
-        "useSortedClasses": {
-          "level": "error",
-          "fix": "safe",
-          "options": {
-            "attributes": ["classList"],
-            "functions": [
-              "twMerge",
-              "twJoin",
-              "tv",
-              "composeRenderProps",
-              "composeTailwindRenderProps"
-            ]
-          }
-        }
+        "noUnknownAtRules": "off"
       }
-    }
-  },
-  "javascript": {
-    "formatter": {
-      "quoteStyle": "double",
-      "arrowParentheses": "always",
-      "bracketSameLine": false,
-      "bracketSpacing": true,
-      "jsxQuoteStyle": "double",
-      "quoteProperties": "asNeeded",
-      "semicolons": "asNeeded",
-      "trailingCommas": "all"
+    },
+    "domains": {
+      "next": "recommended",
+      "react": "recommended"
     }
   },
   "assist": {
-    "enabled": true,
     "actions": {
       "source": {
         "organizeImports": "on"
