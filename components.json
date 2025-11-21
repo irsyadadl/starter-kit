@@ -19,7 +19,7 @@
   },
   "iconLibrary": "@heroicons/react",
   "registries": {
-    "@irsyadadl": {
+    "@irsyad": {
       "url": "https://design.intentui.com/r/{name}",
       "headers": {
         "Authorization": "Bearer ${REGISTRY_TOKEN}"
