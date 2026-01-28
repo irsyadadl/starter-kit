@@ -28,10 +28,14 @@
       "a11y": {
         "noSvgWithoutTitle": "off"
       },
+      "style": {
+        "noNonNullAssertion": "off"
+      },
       "security": {
         "noDangerouslySetInnerHtml": "off"
       },
       "suspicious": {
+        "noArrayIndexKey": "off",
         "noDocumentCookie": "off",
         "noUnknownAtRules": "off"
       },
