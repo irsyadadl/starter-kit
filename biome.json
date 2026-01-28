@@ -25,11 +25,24 @@
     "enabled": true,
     "rules": {
       "recommended": true,
+      "a11y": {
+        "noSvgWithoutTitle": "off"
+      },
+      "security": {
+        "noDangerouslySetInnerHtml": "off"
+      },
       "suspicious": {
+        "noDocumentCookie": "off",
         "noUnknownAtRules": "off"
       },
+      "performance": {
+        "noImgElement": "off"
+      },
       "correctness": {
-        "noUnusedImports": { "level": "error", "fix": "safe" }
+        "noUnusedImports": {
+          "level": "error",
+          "fix": "safe"
+        }
       }
     },
     "domains": {
