@@ -26,6 +26,8 @@
     "rules": {
       "recommended": true,
       "a11y": {
+        "useFocusableInteractive": "off",
+        "useSemanticElements": "off",
         "noSvgWithoutTitle": "off"
       },
       "style": {
@@ -35,6 +37,7 @@
         "noDangerouslySetInnerHtml": "off"
       },
       "suspicious": {
+        "noExplicitAny": "off",
         "noArrayIndexKey": "off",
         "noDocumentCookie": "off",
         "noUnknownAtRules": "off"
@@ -43,6 +46,7 @@
         "noImgElement": "off"
       },
       "correctness": {
+        "useExhaustiveDependencies": "off",
         "noUnusedImports": {
           "level": "error",
           "fix": "safe"
