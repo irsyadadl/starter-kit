@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import localFont from "next/font/local";
 import { headers } from "next/headers";
-import { Providers } from "@/components/theme-provider";
+import { Providers } from "@/components/providers";
 
 const fontSans = localFont({
   src: [
