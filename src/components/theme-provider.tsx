@@ -1,23 +1,22 @@
 "use client";
 
-import {
-  ThemeProvider as Primitive,
-  type ThemeProviderProps,
-  useTheme,
-} from "next-themes";
+import { ThemeProvider } from "next-themes";
+import { I18nProvider } from "react-aria-components/I18nProvider";
 
-const ThemeProvider = ({ children, ...props }: ThemeProviderProps) => {
+interface ProviderProps {
+  lang: string;
+  children: React.ReactNode;
+}
+
+export function Providers({ lang, children }: ProviderProps) {
   return (
-    <Primitive
+    <ThemeProvider
       storageKey="primitive-theme"
       enableSystem
       disableTransitionOnChange
       attribute="class"
-      {...props}
     >
-      {children}
-    </Primitive>
+      <I18nProvider locale={lang}>{children}</I18nProvider>
+    </ThemeProvider>
   );
-};
-
-export { ThemeProvider, useTheme };
+}
